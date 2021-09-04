@@ -10,6 +10,10 @@ export default function Home() {
 
             {/*Header*/}
             <Header/>
+
+            <main>
+
+            </main>
         </div>
     );
 }

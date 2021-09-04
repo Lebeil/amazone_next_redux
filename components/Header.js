@@ -49,7 +49,18 @@ const Header = () => {
 
 
             {/*Bottom nav*/}
-            <div></div>
+            <div className="flex items-center space-x-3 p-2 pl-6 bg-amazon_blues-light text-white text-sm">
+                <p className="link flex items-center">
+                    <MenuIcon className="h-6 mr-1"/>
+                    Toutes
+                </p>
+                <p className="link">Courses alimentaires</p>
+                <p className="link">Amazon Basics</p>
+                <p className="link">Idées cadeaux</p>
+                <p className="link hidden lg:inline-flex">Santé et produits d'hygiène</p>
+                <p className="link hidden lg:inline-flex">Chèques-cadeaux</p>
+                <p className="link hidden lg:inline-flex">Guide de l'acheteur</p>
+            </div>
         </header>
     );
 };
