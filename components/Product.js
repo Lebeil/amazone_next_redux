@@ -21,7 +21,7 @@ const Product = ({ title, price, description, category, image }) => {
 
             <h4 className="flex">{title}</h4>
 
-            {/*<div className="flex">
+            <div className="flex">
                 {Array(rating)
                     .fill()
                     .map((_,i)=> (
@@ -42,7 +42,7 @@ const Product = ({ title, price, description, category, image }) => {
                 </div>
             )}
 
-            <button className="mt-auto button">Ajouter au panier</button>*/}
+            <button className="mt-auto button">Ajouter au panier</button>
 
         </div>
     );
