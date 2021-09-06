@@ -6,7 +6,7 @@ import Currency from 'react-currency-formatter';
 const MAX_RATING = 5;
 const MIN_RATING = 1;
 
-const Product = ({ id, title, price, description, category, image }) => {
+const Product = ({ title, price, description, category, image }) => {
     const [rating] = useState(
         Math.floor(Math.random() * (MAX_RATING - MIN_RATING + 1)) + MIN_RATING
     );
@@ -21,11 +21,11 @@ const Product = ({ id, title, price, description, category, image }) => {
 
             <h4 className="flex">{title}</h4>
 
-            <div className="flex">
+            {/*<div className="flex">
                 {Array(rating)
                     .fill()
                     .map((_,i)=> (
-                        <StarIcon key={id} className="h-5 text-yellow-500" />
+                        <StarIcon key={i} className="h-5 text-yellow-500" />
                     ))}
             </div>
 
@@ -42,7 +42,7 @@ const Product = ({ id, title, price, description, category, image }) => {
                 </div>
             )}
 
-            <button className="mt-auto button">Ajouter au panier</button>
+            <button className="mt-auto button">Ajouter au panier</button>*/}
 
         </div>
     );
