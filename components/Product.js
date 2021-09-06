@@ -24,8 +24,8 @@ const Product = ({ id, title, price, description, category, image }) => {
             <div className="flex">
                 {Array(rating)
                     .fill()
-                    .map((_, i)=> (
-                        <StarIcon className="h-5 text-yellow-500" />
+                    .map((_,i)=> (
+                        <StarIcon key={i} className="h-5 text-yellow-500" />
                     ))}
             </div>
 
