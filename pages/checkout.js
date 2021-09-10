@@ -2,28 +2,29 @@ import React from 'react';
 import Header from "../components/Header";
 import Image from 'next/image';
 import {useSelector} from "react-redux";
-import {selectItems} from "../redux/basketSlice";
+import {selectItems, selectTotal} from "../redux/basketSlice";
 import CheckoutProduct from "../components/CheckoutProduct";
-import {session, useSession} from "next-auth/client";
+import {useSession} from "next-auth/client";
+import Currency from "react-currency-formatter";
 
 const Checkout = () => {
     const items = useSelector(selectItems);
+    const total = useSelector(selectTotal);
     const [session] = useSession();
 
     return (
         <div className="bg-gray-100">
             <Header/>
-
+            {/*Left*/}
+            <div className="flex justify-center mx-auto m-5 shadow-sm">
+                <Image
+                    src="https://links.papareact.com/ikj"
+                    width={1020}
+                    height={250}
+                    objectFit="contain"
+                />
+            </div>
             <main className="lg:flex max-w-screen-2xl mx-auto">
-                {/*Left*/}
-                <div className="flex-grow m-5 shadow-sm">
-                    <Image
-                        src="https://links.papareact.com/ikj"
-                        width={1020}
-                        height={250}
-                        objectFit="contain"
-                    />
-                </div>
 
                 <div className="flex flex-col p-5 space-y-10 bg-white">
                     <h1 className="text-3xl border-b pb-4">
@@ -46,13 +47,13 @@ const Checkout = () => {
 
                 </div>
                 {/*right*/}
-                <div className="flex flex-col bg-white p-10 shadow-md0">
+                <div className="flex flex-col bg-white p-10 shadow-md">
                     {items.length > 0 && (
                         <>
                             <h2 className="whitespace-nowrap">
                                 Subtotal ({items.length} items) :
                                 <span className="font-bold">
-                                {/*<Currency quantity={total} currency="EUR"/>*/}
+                                <Currency quantity={total} currency="EUR"/>
                             </span>
                             </h2>
 
